@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic NFT Character Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Dynamic NFT Character Editor</h1>
+            <p>Customize your NFT character with different traits and accessories</p>
+        </div>
+
+        <div class="editor-container">
+            <div class="character-display">
+                <div class="character">
+                    <div class="character-part head"></div>
+                    <div class="character-part hair" style="background: #8B4513;"></div>
+                    <div class="character-part hat" style="background: #FF6B6B;"></div>
+                    <div class="character-part body"></div>
+                    <div class="character-part shirt" style="background: #4ECDC4;"></div>
+                    <div class="character-part pants" style="background: #45B7D1;"></div>
+                    <div class="character-part shoes" style="background: #2C3E50;"></div>
+                    <div class="character-part accessories" style="background: #F39C12;"></div>
+                </div>
+                
+                <div class="trait-display">
+                    <h4>Current Traits</h4>
+                    <div class="trait">
+                        <span>Hair:</span>
+                        <span id="hair-trait">Brown</span>
+                    </div>
+                    <div class="trait">
+                        <span>Shirt:</span>
+                        <span id="shirt-trait">Teal</span>
+                    </div>
+                    <div class="trait">
+                        <span>Pants:</span>
+                        <span id="pants-trait">Blue</span>
+                    </div>
+                    <div class="trait">
+                        <span>Shoes:</span>
+                        <span id="shoes-trait">Black</span>
+                    </div>
+                    <div class="trait">
+                        <span>Hat:</span>
+                        <span id="hat-trait">None</span>
+                    </div>
+                    <div class="trait">
+                        <span>Accessory:</span>
+                        <span id="accessory-trait">None</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="customization-panel">
+                <div class="category">
+                    <h3>👤 Hair Color</h3>
+                    <div class="options" id="hair-options">
+                        <div class="option selected" style="background: #8B4513;" data-color="#8B4513" data-name="Brown"></div>
+                        <div class="option" style="background: #FFD700;" data-color="#FFD700" data-name="Blonde"></div>
+                        <div class="option" style="background: #000000;" data-color="#000000" data-name="Black"></div>
+                        <div class="option" style="background: #DC143C;" data-color="#DC143C" data-name="Red"></div>
+                        <div class="option" style="background: #9370DB;" data-color="#9370DB" data-name="Purple"></div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>👕 Shirt</h3>
+                    <div class="options" id="shirt-options">
+                        <div class="option selected" style="background: #4ECDC4;" data-color="#4ECDC4" data-name="Teal"></div>
+                        <div class="option" style="background: #FF6B6B;" data-color="#FF6B6B" data-name="Red"></div>
+                        <div class="option" style="background: #4CAF50;" data-color="#4CAF50" data-name="Green"></div>
+                        <div class="option" style="background: #9C27B0;" data-color="#9C27B0" data-name="Purple"></div>
+                        <div class="option" style="background: #FF9800;" data-color="#FF9800" data-name="Orange"></div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>👖 Pants</h3>
+                    <div class="options" id="pants-options">
+                        <div class="option selected" style="background: #45B7D1;" data-color="#45B7D1" data-name="Blue"></div>
+                        <div class="option" style="background: #2C3E50;" data-color="#2C3E50" data-name="Black"></div>
+                        <div class="option" style="background: #8B4513;" data-color="#8B4513" data-name="Brown"></div>
+                        <div class="option" style="background: #696969;" data-color="#696969" data-name="Gray"></div>
+                        <div class="option" style="background: #000080;" data-color="#000080" data-name="Navy"></div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>👞 Shoes</h3>
+                    <div class="options" id="shoes-options">
+                        <div class="option selected" style="background: #2C3E50;" data-color="#2C3E50" data-name="Black"></div>
+                        <div class="option" style="background: #8B4513;" data-color="#8B4513" data-name="Brown"></div>
+                        <div class="option" style="background: #FFFFFF; border: 1px solid #ddd;" data-color="#FFFFFF" data-name="White"></div>
+                        <div class="option" style="background: #FF6B6B;" data-color="#FF6B6B" data-name="Red"></div>
+                        <div class="option" style="background: #4CAF50;" data-color="#4CAF50" data-name="Green"></div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>🎩 Hat</h3>
+                    <div class="options" id="hat-options">
+                        <div class="option selected" style="background: #f0f0f0; position: relative;" data-color="none" data-name="None">
+                            <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px;">✕</span>
+                        </div>
+                        <div class="option" style="background: #FF6B6B;" data-color="#FF6B6B" data-name="Red Cap"></div>
+                        <div class="option" style="background: #4CAF50;" data-color="#4CAF50" data-name="Green Hat"></div>
+                        <div class="option" style="background: #2196F3;" data-color="#2196F3" data-name="Blue Beanie"></div>
+                        <div class="option" style="background: #9C27B0;" data-color="#9C27B0" data-name="Purple Hat"></div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>✨ Accessories</h3>
+                    <div class="options" id="accessory-options">
+                        <div class="option selected" style="background: #f0f0f0; position: relative;" data-color="none" data-name="None">
+                            <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px;">✕</span>
+                        </div>
+                        <div class="option" style="background: #F39C12;" data-color="#F39C12" data-name="Earring"></div>
+                        <div class="option" style="background: #E74C3C;" data-color="#E74C3C" data-name="Red Dot"></div>
+                        <div class="option" style="background: #3498DB;" data-color="#3498DB" data-name="Blue Stud"></div>
+                        <div class="option" style="background: #2ECC71;" data-color="#2ECC71" data-name="Green Gem"></div>
+                    </div>
+                </div>
+
+                <button class="randomize-btn" id="randomize-btn">🎲 Randomize All</button>
+                <button class="export-btn" id="export-btn">💾 Export Traits</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
